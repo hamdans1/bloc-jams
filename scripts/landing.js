@@ -13,7 +13,7 @@ var animatePoints = function (points) {
 };
 
 window.onload = function (){
-    if (window.innerHeight > 850) {
+    if (window.innerHeight > 950) {
         animatePoints(pointsArray);
     }
     var sellingPoints = document.getElementsByClassName('selling-points')[0];
