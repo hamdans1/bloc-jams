@@ -24,7 +24,22 @@ var albumMarconi = {
         { title: 'Ring, ring, ring', duration: '5:01'},
         { title: 'Fits in your pocket', duration: '3:21'},
         { title: 'Can you hear me now?', duration: '3:14'},
-        { title: 'Wrong phone number', duration: '2:15'},
+        { title: 'Wrong phone number', duration: '2:15'}
+    ]
+};
+
+var albumSami = {
+    title: 'A Sandwich For Tomorrow',
+    artist: 'Sami Hamdan',
+    label: 'The Turkey Club',
+    year: '2017',
+    albumArtUrl: 'assets/images/album_covers/10.png',
+    songs: [
+        { title: 'Pass That Mayo', duration: '3:20'},
+        { title: 'Cruncy Baguettes', duration: '2:45'},
+        { title: 'Garlicky Dill is the Best Dill', duration: '3:08'},
+        { title: 'No White Bread For Me', duration: '2:42'},
+        { title: 'Always Ask for Bacon', duration: '8:19'}
     ]
 };
 
@@ -39,12 +54,13 @@ var createSongRow = function (songNumber, songName, songLength) {
     return template;
 };
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var setCurrentAlbum = function(album) {
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
     
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -59,5 +75,16 @@ var setCurrentAlbum = function(album) {
 };
 
 window.onload = function (){
-    setCurrentAlbum(albumMarconi);
+    setCurrentAlbum(albumPicasso);
+    
+    var i = 0;
+    var albumArray = [albumPicasso, albumMarconi, albumSami];
+    
+    albumImage.addEventListener('click', function (event){
+        setCurrentAlbum(albumArray[i]);
+        i++;
+        if (i==albumArray.length){
+            i=0;
+        }
+    })
 };
