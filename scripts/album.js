@@ -57,8 +57,12 @@ var setCurrentAlbum = function(album) {
         albumSongList.innerHTML += createSongRow(i+1, album.songs[i].title, album.songs[i].duration);
     }
 };
+
+
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 
+var songRows = document.getElementsByClassName('album-view-song-item');
+    
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 
 window.onload = function (){
