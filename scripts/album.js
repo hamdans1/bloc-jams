@@ -57,14 +57,6 @@ var setCurrentAlbum = function(album) {
         albumSongList.innerHTML += createSongRow(i+1, album.songs[i].title, album.songs[i].duration);
     }
 };
-<<<<<<< HEAD
-
-
-var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
-
-var songRows = document.getElementsByClassName('album-view-song-item');
-    
-=======
 var findParentByClassName = function(element, targetClass) {
     if (element) {
         var currentParent = element.parentElement;
@@ -115,7 +107,6 @@ var clickHandler = function (targetElement) {
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 
 var songRows = document.getElementsByClassName('album-view-song-item');
->>>>>>> checkpoint13
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
