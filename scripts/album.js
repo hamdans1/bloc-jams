@@ -33,7 +33,7 @@ var createSongRow = function (songNumber, songName, songLength) {
 };
 
 var setCurrentAlbum = function(album) {
-    var currentAlbum = album;
+    this.currentAlbum = album;
     var $albumTitle = $('.album-view-title');
     var $albumArtist = $('.album-view-artist');
     var $albumReleaseInfo = $('.album-view-release-info');
@@ -110,7 +110,7 @@ var updatePlayerBarSong = function () {
 };
 
 var clickHandler = function (){
-    var songNumber = parseInt($(this).attr('.data-song-number'));
+    var songNumber = $(this).attr('data-song-number');
     
     if (currentlyPlayingSongNumber !== null) {
         var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
