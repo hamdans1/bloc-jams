@@ -84,11 +84,13 @@ var trackIndex = function (album,song) {
 
 var togglePlayFromPlayerBar = function () {
     if (currentSoundFile.isPaused()){
+        //if player bar play is clicked below should happen
         $('album-song-button').html(pauseButtonTemplate);
         $('.main-controls .play-pause').html(playerBarPauseButton);
         currentSoundFile.play();
     }
     if (currentSoundFile.play()){
+        //if player bar pause is clicked, below should happen
         $('album-song-button').html(playButtonTemplate);
         $('.main-controls .play-pause').html(playerBarPlayButton);
         currentSoundFile.isPaused();
