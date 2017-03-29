@@ -83,7 +83,7 @@ var trackIndex = function (album,song) {
 };
 
 var togglePlayFromPlayerBar = function () {
-        $('player-bar play-pause').click(event) {
+        $('player-bar play-pause').click(function(event) {
             if (currentSoundFile.isPaused()){
                 $('album-song-button').html(pauseButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPauseButton);
@@ -93,7 +93,7 @@ var togglePlayFromPlayerBar = function () {
                 $('.main-controls .play-pause').html(playerBarPlayButton);
                 currentSoundFile.isPaused();
             }
-    }
+    });
 };
 
 var nextSong = function () {
